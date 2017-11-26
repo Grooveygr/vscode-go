@@ -19,6 +19,7 @@ import { GoSignatureHelpProvider } from './goSignature';
 import { GoWorkspaceSymbolProvider } from './goSymbol';
 import { GoCodeActionProvider } from './goCodeAction';
 import { createScratch, runScratch } from './goScratch';
+import { generateDir } from './goGenerate';
 import { check, removeTestStatus } from './goCheck';
 import { updateGoPathGoRootFromConfig, offerToInstallTools } from './goInstallTools';
 import { GO_MODE } from './goMode';
@@ -217,6 +218,10 @@ export function activate(ctx: vscode.ExtensionContext): void {
 
 	ctx.subscriptions.push(vscode.commands.registerCommand('go.runscratch', () => {
 		runScratch();
+	}));
+
+	ctx.subscriptions.push(vscode.commands.registerCommand('go.generate', () => {
+		generateDir();
 	}));
 
 	ctx.subscriptions.push(vscode.commands.registerCommand('go.test.showOutput', () => {

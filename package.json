@@ -176,6 +176,11 @@
         "description": "Shows all commands from the Go extension in the wuick pick"
       },
       {
+        "command": "go.generate",
+        "title": "Go: Generate",
+        "description": "Run 'go generate' on current file"
+      },
+      {
         "command": "go.newscratch",
         "title": "Go: New Scratch Pad",
         "description": "Create a dummy main in a new window"
@@ -973,6 +978,11 @@
         {
           "when": "editorTextFocus && config.go.editorContextMenuCommands.testCoverage && resourceLangId == go",
           "command": "go.test.coverage",
+          "group": "Go group 1"
+        },
+        {
+          "when": "editorTextFocus && resourceLangId == go",
+          "command": "go.generate",
           "group": "Go group 1"
         },
         {
